@@ -1,0 +1,49 @@
+<div class="col-xs-12 col-sm-6 col-md-9">
+  <%= link_to 'New User', new_admin_user_path, :class => "btn btn-primary" %>
+</div>
+<div class="col-xs-12 col-sm-6 col-md-9"></div>
+<div class="col-xs-12 col-sm-6 col-md-9">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Daftar User</h3>
+    </div>
+    <div class="panel-body">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>No rek</th>
+            <th>Date payment</th>
+            <th>Order number</th>
+            <th>No transfer to</th>
+            <th>Bank transfer to</th>
+            <th>Status payment</th>
+            <th>Method payment</th>
+            <th>Name owner account</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @payments.each_with_index do |payment, idx| %>
+            <tr>
+              <td><%= idx + 1 %></td>
+              <td><%= payment.no_rek %></td>
+              <td><%= payment.date_payment %></td>
+              <td><%= payment.order_number %></td>
+              <td><%= payment.no_transfer_to %></td>
+              <td><%= payment.bank_transfer_to %></td>
+              <td><%= payment.status_payment %></td>
+              <td><%= payment.method_payment %></td>
+              <td><%= payment.name_owner_account %></td>
+              <td>
+                <%= link_to 'Show', admin_payment_path(payment), :class => "btn btn-link" %>
+                <%= link_to 'Edit', edit_admin_payment_path(payment), :class => "btn btn-link" %>
+                <%= link_to 'Destroy', admin_payment_path(payment), method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-link" %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

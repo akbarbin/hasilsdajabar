@@ -1,0 +1,2 @@
+module Wholeseller::BergainsHelper
+end

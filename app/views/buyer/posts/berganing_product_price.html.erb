@@ -1,0 +1,44 @@
+<h1>Menentukan Tanggal Survey dan Penawaran</h1>
+
+<table>
+  <tr>
+    <th>Judul Post</th>
+    <th>Quantity</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  <tr>
+    <td><%= @order.post.title rescue "-" %></td>
+    <td><%= @order.quantity %></td>
+  </tr>
+</table>
+<br/>
+<br/>
+<br/>
+<hr></hr>
+<%= form_for(@bergain, :url => save_berganing_wholeseller_posts_path, :method => 'post') do |f| %>
+  <% if @bergain.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bergain.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+        <% @bergain.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :survey_date, "Tanggal Survey" %>*<br />
+    <%= f.date_select :survey_date %>
+  </div>
+  <div class="field">
+    <%= f.label :bergain_price, "Harga Penawaran" %><br />
+    <%= f.number_field :bergain_price %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Finish" %>
+  </div>
+<% end %>

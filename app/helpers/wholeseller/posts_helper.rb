@@ -1,0 +1,2 @@
+module Wholeseller::PostsHelper
+end

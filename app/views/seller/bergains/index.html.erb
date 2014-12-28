@@ -1,0 +1,37 @@
+<div class="col-xs-12 col-sm-6 col-md-9">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Daftar Penawaran</h3>
+    </div>
+    <div class="panel-body">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Judul Post</th>
+            <th>Tanggal Survey</th>
+            <th>Status Penawaran</th>
+            <th>Harga Penawaran per kilogram</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @bergains.each_with_index do |seller_bergain, idx| %>
+            <tr>
+              <td><%= idx + 1 %></td>
+              <td><%= seller_bergain.title %></td>
+              <td><%= seller_bergain.survey_date %></td>
+              <td><%= seller_bergain.bergain_status %></td>
+              <td><%= seller_bergain.bergain_price %></td>
+              <td>
+                <%= link_to 'Show', seller_bergain_path(seller_bergain), :class => "btn btn-link" %>
+                <%= link_to 'Edit', edit_seller_bergain_path(seller_bergain), :class => "btn btn-link" %>
+                <%= link_to 'Destroy', seller_bergain_path(seller_bergain), method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-link" %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="span4">
+    <ul class="thumbnails">
+      <% @posts.each do |post| %>
+        <li class="thumbnail">
+          <%= image_tag(post.photo_image_url(:thumb)) if post.photo_image? %>
+          <%= image_tag("/assets/160x120.gif") if post.photo_image.blank? %>
+          <div class="caption">
+            <h3><%= post.title rescue "" %></h3>
+            <p>
+              <b>Deskripsi</b>
+              <%= post.description rescue "" %>
+            </p>
+            <p>
+              <b>Harga</b>
+              <%= post.selling_price rescue "" %>
+            </p>
+            <p>
+              <%= link_to "Beli", save_berganing_wholeseller_posts_path, :class => "btn btn-primary" %>
+            </p>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

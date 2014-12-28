@@ -1,0 +1,61 @@
+<p id="notice"><%= notice %></p>
+<div class="col-xs-12 col-sm-6 col-md-9">
+  <%= link_to 'Back', buyer_posts_path, :class => "btn btn-primary" %>
+</div>
+<div class="col-xs-12 col-sm-6 col-md-9"></div>
+
+<div class="col-xs-12 col-sm-6 col-md-9">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Langkah 1 Melakukan Pemesanan</h3>
+    </div>
+    <div class="panel-body">
+      <p>
+        <b>Judul:</b>
+        <%= @post.title %>
+      </p>
+
+      <p>
+        <b>Deskripsi:</b>
+        <%= @post.description %>
+      </p>
+
+      <p>
+        <b>Tanggal Panen:</b>
+        <%= @post.harvest_date %>
+      </p>
+
+      <p>
+        <b>Quantity:</b>
+        <%= @post.quantity %>
+      </p>
+
+      <p>
+        <b>Photo:</b>
+        <%= image_tag(@post.photo_image_url(:thumb)) if @post.photo_image? %>
+      </p>
+
+      <%= form_for(@order, :url => buyer_orders_path, :method => 'post') do |f| %>
+        <% if @order.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@order.errors.count, "error") %> prohibited this post from being saved:</h2>
+            <ul>
+              <% @order.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <div class="field">
+          <%= f.label :quantity %><br />
+          <%= f.number_field :quantity %>
+          <%= f.hidden_field :post_id, :value => @post.id %>
+          <%= f.hidden_field :price, :value => @post.selling_price %>
+        </div>
+        <div class="actions">
+          <%= f.submit "Beli" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

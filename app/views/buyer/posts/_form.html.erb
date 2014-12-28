@@ -1,0 +1,21 @@
+<%= form_for(post, url: url, html: {method: method, multipart: true}) do |f| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this wholeseller_bergain from being saved:</h2>
+
+      <ul>
+        <% @post.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :selling_price, "Harga Jual Per kilogram Untuk Pembeli" %><br />
+    <%= f.number_field :selling_price %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

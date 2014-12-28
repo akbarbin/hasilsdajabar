@@ -1,0 +1,17 @@
+<%= form_for(@wholeseller_order) do |f| %>
+  <% if @wholeseller_order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@wholeseller_order.errors.count, "error") %> prohibited this wholeseller_order from being saved:</h2>
+
+      <ul>
+      <% @wholeseller_order.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

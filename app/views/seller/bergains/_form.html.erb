@@ -1,0 +1,29 @@
+<%= form_for(bergain, url: url, html: {method: method, multipart: true}) do |f| %>
+  <% if @bergain.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bergain.errors.count, "error") %> prohibited this seller_bergain from being saved:</h2>
+
+      <ul>
+        <% @bergain.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="form-group">
+    <%= f.label :survey_date, :class => "col-sm-2 control-label" %>
+    <%= f.date_select :survey_date, :class => "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :bergain_price, :class => "col-sm-2 control-label" %>
+    <%= @bergain.bergain_price.to_i %>
+  </div>
+
+  <div class="field">
+    <%= f.label :bergain_status, :class => "col-sm-2 control-label" %>
+    <%= select("bergain", "bergain_status", Bergain::BERGAIN_STATUS, {include_blank: 'Pilih Status'}) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

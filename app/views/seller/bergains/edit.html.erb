@@ -1,0 +1,14 @@
+<div class="col-xs-12 col-sm-6 col-md-9">
+  <%= link_to 'Back', seller_bergains_path, :class => "btn btn-primary" %>
+</div>
+
+<div class="col-xs-12 col-sm-6 col-md-9">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Mengubah penawaran</h3>
+    </div>
+    <div class="panel-body">
+      <%= render "form", url: seller_bergain_path(@bergain), method: 'put', bergain: @bergain %>
+    </div>
+  </div>
+</div>

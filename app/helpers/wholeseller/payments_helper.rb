@@ -1,0 +1,2 @@
+module Wholeseller::PaymentsHelper
+end

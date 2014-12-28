@@ -1,0 +1,2 @@
+module Wholeseller::OrdersHelper
+end

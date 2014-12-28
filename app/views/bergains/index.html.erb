@@ -1,0 +1,30 @@
+<h1>Listing bergains</h1>
+
+<table>
+  <tr>
+    <th>Survey date</th>
+    <th>Bergain status</th>
+    <th>Bergain price</th>
+    <th>Order</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @bergains.each do |bergain| %>
+  <tr>
+    <td><%= bergain.survey_date %></td>
+    <td><%= bergain.bergain_status %></td>
+    <td><%= bergain.bergain_price %></td>
+    <td><%= bergain.order_id %></td>
+    <td><%= bergain.title %></td>
+    <td><%= link_to 'Show', bergain %></td>
+    <td><%= link_to 'Edit', edit_bergain_path(bergain) %></td>
+    <td><%= link_to 'Destroy', bergain, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Bergain', new_bergain_path %>

@@ -1,0 +1,2 @@
+module Seller::BergainsHelper
+end

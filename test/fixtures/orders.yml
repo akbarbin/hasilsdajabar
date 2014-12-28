@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  order_number: MyString
+  order_status: MyString
+  quantity: 1
+  price: 1
+  grand_total: 1
+  post_id: 1
+  user_id: 1
+
+two:
+  order_number: MyString
+  order_status: MyString
+  quantity: 1
+  price: 1
+  grand_total: 1
+  post_id: 1
+  user_id: 1

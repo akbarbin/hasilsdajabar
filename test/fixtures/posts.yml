@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  description: MyText
+  harvest_date: 2013-11-07
+  quantity: 1
+  selling_price: 1
+  purchase_price: 1
+  slug: MyString
+  user_id: 1
+  wholesellerid: 1
+
+two:
+  title: MyString
+  description: MyText
+  harvest_date: 2013-11-07
+  quantity: 1
+  selling_price: 1
+  purchase_price: 1
+  slug: MyString
+  user_id: 1
+  wholesellerid: 1

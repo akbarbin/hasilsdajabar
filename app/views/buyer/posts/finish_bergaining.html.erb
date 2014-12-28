@@ -1,0 +1,16 @@
+<h1>Ringkasan penawaran.</h1>
+
+<table>
+  <tr>
+    <th>Judul Post</th>
+    <th>Harga Penawaran</th>
+    <th>Tanggal Survey</th>
+    <th></th>
+    <th></th>
+  </tr>
+  <tr>
+    <td><%= @order.post.title rescue "-" %></td>
+    <td><%= @bergain.bergain_price rescue "-" %></td>
+    <td><%= @bergain.survey_date rescue "-" %></td>
+  </tr>
+</table>

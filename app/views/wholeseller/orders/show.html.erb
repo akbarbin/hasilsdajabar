@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+<div class="col-xs-12 col-sm-6 col-md-9">
+  <%= link_to 'Back', wholeseller_orders_path, :class => "btn btn-primary" %>
+</div>
+<div class="col-xs-12 col-sm-6 col-md-9"></div>
+<div class="col-xs-12 col-sm-6 col-md-9">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Melihat pemesanan</h3>
+    </div>
+    <div class="panel-body">
+      <p>
+        <b>Order Number:</b>
+        <%= @order.order_number %>
+      </p>
+
+      <p>
+        <b>Status pemesanan:</b>
+        <%= @order.order_status %>
+      </p>
+
+      <p>
+        <b>Quantity:</b>
+        <%= @order.quantity %>
+      </p>
+
+      <p>
+        <b>Harga Pemesanan per kilogram:</b>
+        <%= @order.price %>
+      </p>
+
+      <p>
+        <b>Judul post:</b>
+        <%= @order.post.title %>
+      </p>
+
+      <p>
+        <b>Alamat:</b>
+        <%= @order.post.user.address %>
+      </p>
+    </div>
+  </div>
+</div>

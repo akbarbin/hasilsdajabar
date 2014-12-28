@@ -1,0 +1,66 @@
+<div class="col-xs-12 col-sm-6 col-md-9">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Langkah 3 Memilih Metode Pembayaran</h3>
+    </div>
+    <div class="panel-body">
+      <p>
+        <b>Judul:</b>
+        <%= @order.post.title %>
+      </p>
+
+      <p>
+        <b>Deskripsi:</b>
+        <%= @order.post.description %>
+      </p>
+
+      <p>
+        <b>Tanggal Panen:</b>
+        <%= @order.post.harvest_date %>
+      </p>
+
+      <p>
+        <b>Quantity:</b>
+        <%= @order.post.quantity %>
+      </p>
+
+      <p>
+        <b>Harga Penawaran yang telah disetujui:</b>
+        <%= @order.post.purchase_price %>
+      </p>
+
+      <%= form_for(@order, :url => update_method_payment_wholeseller_order_path(@order), :method => 'put') do |f| %>
+        <% if @order.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@order.errors.count, "error") %> prohibited this post from being saved:</h2>
+            <ul>
+              <% @order.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <p>
+          <b>Tranfer Ke Bank:</b>
+          BCA
+        </p>
+        <p>
+          <b>Atas Nama Tranfer:</b>
+          Hasil SDA
+        </p>
+        <p>
+          <b>No Rekening:</b>
+          12898876676767
+        </p>
+        <div class="form-group">
+          <%= f.label :metode_pembayaran %><br />
+          <%= f.radio_button :payment_method, "transfer" %> Transfer
+          <%= f.hidden_field :order_status, :value => "Waiting-order" %>
+        </div>
+        <div class="actions">
+          <%= f.submit "Lanjut" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

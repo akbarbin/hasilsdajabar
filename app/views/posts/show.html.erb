@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @post.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @post.description %>
+</p>
+
+<p>
+  <b>Harvest date:</b>
+  <%= @post.harvest_date %>
+</p>
+
+<p>
+  <b>Quantity:</b>
+  <%= @post.quantity %>
+</p>
+
+<p>
+  <b>Selling price:</b>
+  <%= @post.selling_price %>
+</p>
+
+<p>
+  <b>Purchase price:</b>
+  <%= @post.purchase_price %>
+</p>
+
+<p>
+  <b>Slug:</b>
+  <%= @post.slug %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @post.user_id %>
+</p>
+
+<p>
+  <b>Wholesellerid:</b>
+  <%= @post.wholesellerid %>
+</p>
+
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>

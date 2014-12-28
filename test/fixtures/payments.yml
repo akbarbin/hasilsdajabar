@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  no_rek: MyString
+  date_payment: 2013-11-07
+  order_number: MyString
+  no_transfer_to: MyString
+  bank_transfer_to: MyString
+  status_payment: MyString
+  method_payment: MyString
+  name_owner_account: MyString
+
+two:
+  no_rek: MyString
+  date_payment: 2013-11-07
+  order_number: MyString
+  no_transfer_to: MyString
+  bank_transfer_to: MyString
+  status_payment: MyString
+  method_payment: MyString
+  name_owner_account: MyString

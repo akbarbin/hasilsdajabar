@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>No rek:</b>
+  <%= @payment.no_rek %>
+</p>
+
+<p>
+  <b>Date payment:</b>
+  <%= @payment.date_payment %>
+</p>
+
+<p>
+  <b>Order number:</b>
+  <%= @payment.order_number %>
+</p>
+
+<p>
+  <b>No transfer to:</b>
+  <%= @payment.no_transfer_to %>
+</p>
+
+<p>
+  <b>Bank transfer to:</b>
+  <%= @payment.bank_transfer_to %>
+</p>
+
+<p>
+  <b>Status payment:</b>
+  <%= @payment.status_payment %>
+</p>
+
+<p>
+  <b>Method payment:</b>
+  <%= @payment.method_payment %>
+</p>
+
+<p>
+  <b>Name owner account:</b>
+  <%= @payment.name_owner_account %>
+</p>
+
+
+<%= link_to 'Edit', edit_payment_path(@payment) %> |
+<%= link_to 'Back', payments_path %>

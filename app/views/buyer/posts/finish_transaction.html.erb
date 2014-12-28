@@ -1,0 +1,22 @@
+<h1>Tahap akhir transaksi.</h1>
+
+<table>
+  <tr>
+    <th>Judul Post</th>
+    <th>Quantity</th>
+    <th>Harga per kilogram</th>
+    <th>Grand Total</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  <tr>
+    <td><%= @order.post.title rescue "-" %></td>
+    <td><%= @order.quantity rescue "-" %></td>
+    <td><%= @order.price rescue "-" %></td>
+    <td><%= @order.grand_total rescue "-" %></td>
+  </tr>
+</table>
+
+<p>Nomer Order anda adalah:</p>
+<h3>JKJKUY</h3>

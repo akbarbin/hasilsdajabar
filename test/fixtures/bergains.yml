@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  survey_date: 2013-11-07
+  bergain_status: MyString
+  bergain_price: 1
+  order_id: 1
+
+two:
+  survey_date: 2013-11-07
+  bergain_status: MyString
+  bergain_price: 1
+  order_id: 1

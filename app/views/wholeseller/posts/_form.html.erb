@@ -1,0 +1,22 @@
+<%= form_for(post, url: url, html: {method: method, multipart: true}, :html => {:class => "form-horizontal"}) do |f| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this wholeseller_bergain from being saved:</h2>
+
+      <ul>
+        <% @post.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="form-group">
+    <%= f.label :selling_price, "Harga Jual", :class => "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.number_field :selling_price, :class => "form-control", :placeholder => "Harga Jual Per kilogram Untuk Pembeli" %>
+    </div>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+<div class="col-xs-12 col-sm-6 col-md-9">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Langkah 2 Melakukan Pemesanan</h3>
+    </div>
+    <div class="panel-body">
+      <p>
+        <b>Judul post:</b>
+        <%= @order.post.title %>
+      </p>
+
+      <p>
+        <b>Deskripsi post:</b>
+        <%= @order.post.description %>
+      </p>
+
+      <p>
+        <b>Tanggal Panen:</b>
+        <%= @order.post.harvest_date %>
+      </p>
+
+      <p>
+        <b>Harga Penawaran per kilogram yang telah disetujui:</b>
+        <%= @order.post.purchase_price %>
+      </p>
+
+      <p>
+        <b>Quantity:</b>
+        <%= @order.post.quantity %>
+      </p>
+
+      <p>
+        <b>Alamat:</b>
+        <%= @order.post.user.address %>
+      </p>
+      <%= form_for(@order, :url => add_to_order_wholeseller_order_path(@order), :method => 'post') do |f| %>
+        <% if @order.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@order.errors.count, "error") %> prohibited this post from being saved:</h2>
+            <ul>
+              <% @order.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <%= f.hidden_field :price, :value => @order.post.purchase_price %>
+        <div class="field">
+          <%= f.label :quantity %><br />
+          <%= f.number_field :quantity %>
+        </div>
+        <div class="actions">
+          <%= f.submit "Beli" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

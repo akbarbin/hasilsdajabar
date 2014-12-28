@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+<div class="col-xs-12 col-sm-6 col-md-9">
+  <%= link_to 'Edit', edit_wholeseller_bergain_path(@bergain), :class => "btn btn-primary" %>
+  <%= link_to 'Back', wholeseller_bergains_path, :class => "btn btn-primary" %>
+</div>
+<div class="col-xs-12 col-sm-6 col-md-9"></div>
+
+<div class="col-xs-12 col-sm-6 col-md-9">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Melihat penawaran</h3>
+    </div>
+    <div class="panel-body">
+      <p>
+        <b>Survey date:</b>
+        <%= @bergain.survey_date %>
+      </p>
+
+      <p>
+        <b>Bergain status:</b>
+        <%= @bergain.bergain_status %>
+      </p>
+
+      <p>
+        <b>Bergain price:</b>
+        <%= @bergain.bergain_price %>
+      </p>
+
+      <p>
+        <b>Judul post:</b>
+        <%= @bergain.order.post.title %>
+      </p>
+
+      <p>
+        <b>Alamat:</b>
+        <%= @bergain.order.post.user.address %>
+      </p>
+    </div>
+  </div>
+</div>

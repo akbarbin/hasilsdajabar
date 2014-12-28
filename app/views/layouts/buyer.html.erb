@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hasilsda</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <%= render 'shared/flash_message' %>
+      <!-- Static navbar -->
+      <div class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/buyer/dashboards">Hasil sda jabar</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <% if user_signed_in? %>
+              <li><%= link_to "Tentang", about_home_index_path %></li>
+              <li><%= link_to 'Keluar', destroy_user_session_path, method: 'delete' %></li>
+            <% else %>
+              <li><%= link_to "Tentang", about_home_index_path %></li>
+              <li><%= link_to "Daftar", new_registration_path(:user) %></li>
+              <li><%= link_to "Masuk", new_session_path(:user) %></li>
+            <% end %>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+      <div class="row">
+        <div class="col-xs-6 col-md-3">
+          <ul class="nav nav-pills nav-stacked well">
+            <% if user_signed_in? %>
+              <li class="active"><%= link_to 'Dashboard', buyer_dashboards_path %></li>
+              <li><%= link_to 'Mengelola Post', buyer_posts_path %></li>
+              <li><%= link_to 'Mengelola Pemesanan', buyer_orders_path %></li>
+              <li><%= link_to 'Konfirmasi Pembayaran', confirm_payment_buyer_payments_path %></li>
+            <% end %>
+          </ul>
+        </div>
+        <%= yield %>
+      </div>
+    </div>
+  </body>
+</html>

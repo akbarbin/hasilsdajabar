@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Survey date:</b>
+  <%= @bergain.survey_date %>
+</p>
+
+<p>
+  <b>Bergain status:</b>
+  <%= @bergain.bergain_status %>
+</p>
+
+<p>
+  <b>Bergain price:</b>
+  <%= @bergain.bergain_price %>
+</p>
+
+<p>
+  <b>Order:</b>
+  <%= @bergain.order_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_bergain_path(@bergain) %> |
+<%= link_to 'Back', bergains_path %>

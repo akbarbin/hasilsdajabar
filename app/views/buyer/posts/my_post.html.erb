@@ -1,0 +1,24 @@
+<h1>Listing posts</h1>
+
+<table>
+  <tr>
+    <th>Judul</th>
+    <th>Deskripsi</th>
+    <th>Quantity</th>
+    <th>Nama Petani</th>
+    <th>Harga Jual Ke Pembeli</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  <% @posts.each do |post| %>
+    <tr>
+      <td><%= post.title %></td>
+      <td><%= post.description %></td>
+      <td><%= post.quantity %></td>
+      <td><%= post.user.name rescue "-" %></td>
+      <td><%= post.selling_price rescue "-" %></td>
+      <td><%= link_to 'Edit', edit_wholeseller_post_path(post.id) %></td>
+    </tr>
+  <% end %>
+</table>

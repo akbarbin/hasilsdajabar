@@ -1,0 +1,23 @@
+<h1>Listing wholeseller_payments</h1>
+
+<table>
+  <tr>
+    <th>Order Number</th>
+    <th>Total Pembayaran</th>
+    <th>Status Pembayaran</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  <% @payments.each do |payment| %>
+    <tr>
+      <td><%= link_to 'Show', wholeseller_payment_path(payment) %></td>
+      <td><%= link_to 'Edit', edit_wholeseller_payment_path(payment) %></td>
+      <td><%= link_to 'Destroy', wholeseller_payment_path(payment), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Payment', new_wholeseller_payment_path %>

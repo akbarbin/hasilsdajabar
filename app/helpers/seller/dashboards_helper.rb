@@ -1,0 +1,2 @@
+module Seller::DashboardsHelper
+end
